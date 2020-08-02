@@ -14,6 +14,7 @@
     <title>Login Page</title>
 </head>
 <body>
+<%@ include file="nav.jsp" %>
 <div class="container" style="background-color: white; border-radius: 10px; padding:10px;">
 
     <form action="/login" method="post">

@@ -22,15 +22,20 @@
         <div class="alert alert-warning" role="alert">
             You are not logged in please log in!
         </div>
-        <%--        <a class="btn btn-primary" href="/login" role="button">Login</a>--%>
     </c:if>
     <c:if test="${sessionScope.get(\"USER\") !=null}">
+
+        <c:if test="${tasks.isEmpty()}">
+            <div class="alert alert-warning" role="alert">
+                There are no tasks. Please add new task!
+            </div>
+        </c:if>
 
         <c:if test="${tasks !=null && tasks.isEmpty() == false}">
             <table class="table">
                 <tr>
                     <th>TaskId</th>
-                    <th>TaskDetails</th>
+                    <th>Task Title</th>
                 </tr>
                 <c:forEach items="${tasks}" var="task">
                     <tr>
