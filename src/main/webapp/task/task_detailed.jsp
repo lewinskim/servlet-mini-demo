@@ -13,7 +13,7 @@
     <title>Task Details</title>
 </head>
 <body>
-
+<%@ include file="../nav.jsp" %>
 <div class="container" style="background-color: white; border-radius: 10px; padding:10px;">
     <c:if test="${sessionScope.get(\"USER\") == null }">
         <div class="alert alert-warning" role="alert">
@@ -21,10 +21,17 @@
         </div>
         <a class="btn btn-primary" href="/login" role="button">Login</a>
     </c:if>
+
     <c:if test="${sessionScope.get(\"USER\") !=null}">
-        <c:out value="${task.id}"/>
-        <c:out value="${task.title}"/>
-        <c:out value="${task.details}"/>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><c:out value="${task.title}"/></h5>
+                    <small><c:out value="${task.id}"/></small>
+                </div>
+                <p class="mb-1"><c:out value="${task.details}"/></p>
+            </a>
+        </div>
     </c:if>
 </div>
 </body>

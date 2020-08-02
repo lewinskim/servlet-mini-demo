@@ -14,11 +14,11 @@
     <title>Add Task</title>
 </head>
 <body>
-
+<%@ include file="../nav.jsp" %>
 <div class="container" style="background-color: white; border-radius: 10px; padding:10px;">
 <form action="/task/add" method="post">
     <label for="tasktitle">TaskTitle</label>
-    <input id="tasktitle" type="text" name="tasktitle"/>
+    <input id="tasktitle" type="text" name="tasktitle"/><br/>
     <label for="taskdetails">TaskDetails</label>
     <input id="taskdetails" type="text" name="taskcontext"/>
     <br/><br/>
